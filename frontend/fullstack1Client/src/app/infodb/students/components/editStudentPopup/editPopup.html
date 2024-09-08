@@ -1,0 +1,23 @@
+<mat-card>
+    <h2>Edit Student</h2>
+    <mat-form-field appearance="fill">
+        <mat-label>Student Name</mat-label>
+        <input matInput [(ngModel)]="data.id" disabled>
+      </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Student Name</mat-label>
+      <input matInput [(ngModel)]="data.Name" placeholder="Enter student name">
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>School</mat-label>
+      <input matInput [(ngModel)]="data.School" placeholder="Enter student school">
+    </mat-form-field>
+    
+    <div>
+      <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+      <button mat-button (click)="onCancel()">Cancel</button>
+    </div>
+  </mat-card>
+  

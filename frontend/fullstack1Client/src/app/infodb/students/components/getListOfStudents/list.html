@@ -1,0 +1,45 @@
+<div style="display: flex; justify-content: space-between; width: 97%; padding-bottom: 20px;">
+  <button mat-icon-button (click)="gotoAddStudent()">add student</button>
+  <button mat-icon-button (click)="deleteAll()">delete all</button>
+</div>
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Student ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Student ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Student Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Student Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+    </ng-container>
+  
+    <!-- Student School Column -->
+    <ng-container matColumnDef="school">
+      <th mat-header-cell *matHeaderCellDef> Student School </th>
+      <td mat-cell *matCellDef="let element"> {{element.School}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <!-- Update Action Icon -->
+        <button mat-icon-button (click)="onUpdate(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <!-- Delete Action Icon -->
+        <button mat-icon-button (click)="onDelete(element.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+  
+    <!-- Header and Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  

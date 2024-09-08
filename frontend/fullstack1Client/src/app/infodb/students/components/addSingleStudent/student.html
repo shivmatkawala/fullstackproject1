@@ -1,0 +1,24 @@
+<div>
+    <mat-card appearance="outlined">
+        <!-- Name Field -->
+        <mat-form-field class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Student Name" [(ngModel)]="new_student.Name">
+        </mat-form-field>
+
+        <!-- School Field -->
+        <mat-form-field class="example-full-width">
+            <mat-label>School</mat-label>
+            <input matInput placeholder="Student School" [(ngModel)]="new_student.School">
+        </mat-form-field>
+    </mat-card>
+
+    <!-- Save Button -->
+    <button mat-button (click)="addStudent()">SAVE</button>
+</div>
+
+<div style="display: flex; justify-content: space-between; width: 97%; padding-bottom: 20px;">
+    <button mat-icon-button (click)="gotoEditStudent()">edit student</button>
+
+    <button mat-icon-button (click)="gotoAddAll()" >Go to Add All</button>
+</div>
